@@ -1,0 +1,6 @@
+After I upload my file to github, I can do nothing to change the content through push.
+
+
+This is because I am in no branch If I don't have other branch.
+
+So I create a new branch and back to master branch. Then I can change the file again! 
