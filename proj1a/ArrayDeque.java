@@ -75,23 +75,8 @@ public class ArrayDeque<T> {
 
     }
 
-    public T getFirst() {
 
-        return items[0];
 
-    }
-
-    public T getLast() {
-
-        if (size==0) {
-
-            return null;
-
-        }
-
-        return  items[size-1];
-
-    }
 
     public T get (int index) {
 

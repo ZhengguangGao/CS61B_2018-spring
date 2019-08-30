@@ -47,7 +47,7 @@ public class LinkedListDeque<T> {
     }
 
 
-
+    /**
     public LinkedListDeque(T x) {
 
         sentinel = new IntNode(null,null,null);
@@ -60,6 +60,7 @@ public class LinkedListDeque<T> {
 
 
     }
+     **/
 
 
 
@@ -122,24 +123,26 @@ public class LinkedListDeque<T> {
      * and the sentinel.next points to sentinel if the link is empty,
      * sentinel.next.item is null.
      * */
-
+    /**
     public T getFirst() {
 
         return sentinel.next.item;
 
     }
-
+    **/
 
     /** Returns the first item in the list.
      *  sentinel.prev points to sentinel if linked list is empty,
      *  so sentinel.prev.item is null if the link is empty.
      * */
 
+    /**
     public T getLast() {
 
         return sentinel.prev.item;
 
     }
+     **/
 
 
 
