@@ -46,24 +46,6 @@ public class LinkedListDeque<T> {
 
     }
 
-
-    /**
-    public LinkedListDeque(T x) {
-
-        sentinel = new IntNode(null,null,null);
-
-        sentinel.next = new IntNode(sentinel,x,sentinel);
-
-        sentinel.prev = sentinel.next; //sentinel.prev is to store the last Node
-
-        size = 1;
-
-
-    }
-     **/
-
-
-
     /** Adds x to the front of the list. */
 
     public void addFirst(T x) {
@@ -78,7 +60,13 @@ public class LinkedListDeque<T> {
 
         } else {
 
-            ptr.next = new IntNode(sentinel,x,ptr.next);
+            IntNode item = new IntNode(sentinel,x,ptr.next);
+
+            //ptr.next = new IntNode(sentinel,x,ptr.next);
+
+            ptr.next = item;
+
+            ptr.next.next.prev = item;
 
         }
 
@@ -115,35 +103,6 @@ public class LinkedListDeque<T> {
         return result;
 
     }
-
-
-
-    /** Returns the first item in the list.
-     * Because the item in sentinel defined in advance is null,
-     * and the sentinel.next points to sentinel if the link is empty,
-     * sentinel.next.item is null.
-     * */
-    /**
-    public T getFirst() {
-
-        return sentinel.next.item;
-
-    }
-    **/
-
-    /** Returns the first item in the list.
-     *  sentinel.prev points to sentinel if linked list is empty,
-     *  so sentinel.prev.item is null if the link is empty.
-     * */
-
-    /**
-    public T getLast() {
-
-        return sentinel.prev.item;
-
-    }
-     **/
-
 
 
 
@@ -220,7 +179,7 @@ public class LinkedListDeque<T> {
 
         T result = sentinel.prev.item;
 
-        sentinel.prev.prev.next = sentinel;
+        //sentinel.prev.prev.next = sentinel;
 
         sentinel.prev = sentinel.prev.prev;
 
@@ -278,48 +237,22 @@ public class LinkedListDeque<T> {
         }
     }
 
-
 /**
+
     public static void main(String[] args) {
 
 
-        LinkedListDeque<String> L = new LinkedListDeque<>("hello");
+        LinkedListDeque<Integer> L = new LinkedListDeque<>();
 
-        System.out.println(L.size());
-
-        System.out.println(L.isEmpty());
-
-        System.out.println(L.getLast());
-
-        System.out.println(L.getFirst());
-
-        System.out.println(L.removeFirst());
-
-
-        L.addFirst("computer");
-
-        L.addFirst("to");
-
-        L.addFirst("welcome");
-
-        L.addLast("science");
-
-        System.out.println(L.size());
-
-        System.out.println(L.getFirst());
-
-        System.out.println(L.getLast());
-
-
-        System.out.println(L.size());
-
-        System.out.println(L.get(3));
-
-        System.out.println(L.removeFirst());
-
-        L.printDeque();
+        L.addFirst(0);
+        L.addFirst(1);
+        L.addFirst(2);
+        L.addFirst(3);
+        L.addFirst(4);
+        System.out.println(L.removeLast());
+        System.out.println(L.removeLast());
 
     }
+    **/
 
- */
 }
