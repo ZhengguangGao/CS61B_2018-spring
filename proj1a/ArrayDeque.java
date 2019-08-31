@@ -118,11 +118,11 @@ public class ArrayDeque<T> {
 
             size -= 1;
 
-            //if (size / items.length <= 0.25) {
+            if ((float) size / items.length <= 0.25) {
 
-                //resize(items.length/2);
+                resize(items.length/2);
 
-            //}
+            }
 
             return result;
 
@@ -143,11 +143,11 @@ public class ArrayDeque<T> {
 
             size = size-1;
 
-            //if (size / items.length <= 0.25) {
+            if ((float) size / items.length <= 0.25) {
 
-                //resize(items.length/2);
+                resize(items.length/2);
 
-            //}
+            }
 
             return result;
         }
@@ -170,36 +170,32 @@ public class ArrayDeque<T> {
     }
 
 
-/**
 
+    /**
     public static void main(String[] args) {
 
-        ArrayDeque<String> L = new ArrayDeque<>();
+        ArrayDeque<Integer> L = new ArrayDeque<>();
+
+        for (int i = 0; i < 127; i++) {
+            L.addFirst(i);
+        }
+
+        for (int i = 0; i < 120; i++) {
+            L.removeFirst();
+        }
+
+        //L.removeLast();
+
+        //System.out.println((float) 10 / 128);
 
         System.out.println(L.size);
 
-        System.out.println(L.getLast());
-
-        L.addFirst("hello");
-
-        L.addLast("world");
-
-        L.addFirst("hello");
-
-        System.out.println(L.size);
-
-        System.out.println(L.get(3));
-
-        L.removeFirst();
-
-        System.out.println(L.size);
-
-        L.printDeque();
 
 
     }
+     **/
 
-*/
+
 
 
 }
