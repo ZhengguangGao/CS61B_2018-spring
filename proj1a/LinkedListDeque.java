@@ -171,7 +171,7 @@ public class LinkedListDeque<T> {
 
     public T removeLast() {
 
-        if (sentinel.next != sentinel.prev) {
+        if (sentinel.next != sentinel) {
 
             size -= 1;
 
@@ -180,6 +180,8 @@ public class LinkedListDeque<T> {
         T result = sentinel.prev.item;
 
         //sentinel.prev.prev.next = sentinel;
+
+        sentinel.prev.prev.next = sentinel;
 
         sentinel.prev = sentinel.prev.prev;
 
@@ -237,8 +239,8 @@ public class LinkedListDeque<T> {
         }
     }
 
-/**
 
+/**
     public static void main(String[] args) {
 
 
@@ -246,11 +248,8 @@ public class LinkedListDeque<T> {
 
         L.addFirst(0);
         L.addFirst(1);
-        L.addFirst(2);
-        L.addFirst(3);
-        L.addFirst(4);
         System.out.println(L.removeLast());
-        System.out.println(L.removeLast());
+        System.out.println(L.isEmpty());
 
     }
     **/
