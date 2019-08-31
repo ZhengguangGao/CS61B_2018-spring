@@ -52,7 +52,7 @@ public class ArrayDeque<T> {
 
         if (size == items.length) {
 
-            resize(size*3);
+            resize(size*2);
 
         }
 
@@ -68,7 +68,7 @@ public class ArrayDeque<T> {
 
         if (size == items.length) {
 
-            resize(size*3);
+            resize(size*2);
 
         }
 
@@ -113,6 +113,8 @@ public class ArrayDeque<T> {
             items[0] = null;
 
             System.arraycopy(items,1,items,0,size-1);
+
+            items[size-1] = null;
 
             size -= 1;
 
