@@ -118,6 +118,12 @@ public class ArrayDeque<T> {
 
             size -= 1;
 
+            if (size / items.length <= 0.25) {
+
+                resize(items.length/2);
+                
+            }
+
             return result;
 
         }
@@ -136,6 +142,12 @@ public class ArrayDeque<T> {
             items[size-1] = null;
 
             size = size-1;
+
+            if (size / items.length <= 0.25) {
+
+                resize(items.length/2);
+
+            }
 
             return result;
         }
