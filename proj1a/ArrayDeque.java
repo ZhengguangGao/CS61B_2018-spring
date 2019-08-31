@@ -118,11 +118,11 @@ public class ArrayDeque<T> {
 
             size -= 1;
 
-            if (size / items.length <= 0.25) {
+            //if (size / items.length <= 0.25) {
 
-                resize(items.length/2);
-                
-            }
+                //resize(items.length/2);
+
+            //}
 
             return result;
 
@@ -143,11 +143,11 @@ public class ArrayDeque<T> {
 
             size = size-1;
 
-            if (size / items.length <= 0.25) {
+            //if (size / items.length <= 0.25) {
 
-                resize(items.length/2);
+                //resize(items.length/2);
 
-            }
+            //}
 
             return result;
         }
