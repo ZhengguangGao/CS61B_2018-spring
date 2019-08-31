@@ -171,7 +171,7 @@ public class ArrayDeque<T> {
 
 
 
-
+/**
     public static void main(String[] args) {
 
         ArrayDeque<Integer> L = new ArrayDeque<>();
@@ -194,9 +194,6 @@ public class ArrayDeque<T> {
 
     }
 
-
-
-
-
+**/
 }
 
