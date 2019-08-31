@@ -23,6 +23,9 @@ public class ArrayDeque<T> {
         items = null;
 
         items = a;
+
+        a = null;
+
     }
 
     public boolean isEmpty() {
