@@ -163,7 +163,18 @@ public class LinkedListDeque<T> {
 
         T result = sentinel.next.item;
 
+        IntNode First = sentinel.next;
+
         sentinel.next = sentinel.next.next;
+
+        First.next.prev = sentinel;
+        /**
+        if (First.next == First.prev) {
+            sentinel.prev = sentinel;
+
+        }
+        **/
+
 
         return result;
 
@@ -240,16 +251,36 @@ public class LinkedListDeque<T> {
     }
 
 
-/**
+    /**
     public static void main(String[] args) {
 
 
         LinkedListDeque<Integer> L = new LinkedListDeque<>();
 
-        L.addFirst(0);
-        L.addFirst(1);
-        System.out.println(L.removeLast());
-        System.out.println(L.isEmpty());
+        //System.out.println(L.isEmpty());
+
+        //System.out.println(L.size());
+
+        //L.addFirst(2);
+
+        L.addLast(0);
+
+        L.removeFirst();
+
+        //L.removeLast();
+
+        L.addLast(2);
+        L.addLast(3);
+
+        //L.addFirst(7);
+
+        System.out.println(L.removeFirst());
+
+        //System.out.println(L.removeLast());
+
+        //System.out.println(L.size());
+
+        //System.out.println(L.isEmpty());
 
     }
     **/
