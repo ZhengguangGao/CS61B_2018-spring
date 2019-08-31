@@ -118,7 +118,7 @@ public class ArrayDeque<T> {
 
             size -= 1;
 
-            if ((float) size / items.length <= 0.25) {
+            if ((float) size / (float) items.length <= 0.25 && size > 8) {
 
                 resize(items.length/2);
 
@@ -143,7 +143,7 @@ public class ArrayDeque<T> {
 
             size = size-1;
 
-            if ((float) size / items.length <= 0.25) {
+            if ((float) size / (float) items.length <= 0.25 && size > 8) {
 
                 resize(items.length/2);
 
@@ -171,29 +171,29 @@ public class ArrayDeque<T> {
 
 
 
-    /**
+
     public static void main(String[] args) {
 
         ArrayDeque<Integer> L = new ArrayDeque<>();
 
-        for (int i = 0; i < 127; i++) {
+        for (int i = 0; i < 1; i++) {
             L.addFirst(i);
         }
 
-        for (int i = 0; i < 120; i++) {
+        for (int i = 0; i < 2; i++) {
             L.removeFirst();
         }
 
         //L.removeLast();
 
-        //System.out.println((float) 10 / 128);
+        System.out.println((float) 10 / (float) 128);
 
         System.out.println(L.size);
 
 
 
     }
-     **/
+
 
 
 
