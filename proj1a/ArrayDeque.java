@@ -102,7 +102,7 @@ public class ArrayDeque<T> {
 
         }
 
-        if (end < items.length-1) {
+        if (end < items.length) {
 
             items[end] = x;
 
@@ -426,19 +426,29 @@ public class ArrayDeque<T> {
 
         ArrayDeque<Integer> L = new ArrayDeque<>();
 
-        for (int i = 0; i < 1; i++) {
-            L.addFirst(i);
+        for (int i = 0; i < 256; i++) {
+            L.addLast(i);
         }
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 190; i++) {
+            L.removeLast();
+        }
+
+        for (int i = 0; i < 3; i++) {
+            L.removeFirst();
+        }
+
+
+
+*//*        for (int i = 0; i < 2; i++) {
             L.removeFirst();
         }
 
         //L.removeLast();
 
-        System.out.println((float) 10 / (float) 128);
+        System.out.println((float) 10 / (float) 128);*//*
 
-        System.out.println(L.size);
+        System.out.println(L.get(0));
 
 
 
