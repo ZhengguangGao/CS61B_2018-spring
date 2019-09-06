@@ -412,13 +412,13 @@ public class ArrayDeque<T> {
 
 
 
-
-  /*  public static void main(String[] args) {
+/*
+    public static void main(String[] args) {
 
         Random rand = new Random();
 
         ArrayDeque<Integer> L = new ArrayDeque<>();
- *//*       ArrayDeque.addLast(0);
+        ArrayDeque.addLast(0);
         ArrayDeque.addFirst(1);
         ArrayDeque.addFirst(2);
         ArrayDeque.get(1);
@@ -441,7 +441,7 @@ public class ArrayDeque<T> {
         ArrayDeque.addLast(20);
         ArrayDeque.get(2);
         ArrayDeque.addFirst(22);
-        System.out.println(ArrayDeque.removeLast());*//*
+        System.out.println(ArrayDeque.removeLast());
 
 
         for (int i = 0; i < 256; i++) {
@@ -461,14 +461,14 @@ public class ArrayDeque<T> {
         for (int i = 0; i < 66; i++) {
             System.out.println(L.removeFirst());
             //System.out.println(L.removeLast());
-        }*/
+        }
 
 
 
 
 
 
-    }
+    }*/
 
 
 }
