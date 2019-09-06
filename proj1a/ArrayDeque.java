@@ -198,20 +198,26 @@ public class ArrayDeque<T> {
 
         if (end > start) {
 
-            System.arraycopy(items,start,a,start,size);
+            System.arraycopy(items,start,a,0,size);
+
+
 
         } else {
 
-            System.arraycopy(items,start,a,start,(items.length - start));
+            System.arraycopy(items,start,a,0,(items.length - start));
 
-            System.arraycopy(items,0,a,items.length,start);
+            System.arraycopy(items,0,a,(items.length - start),end);
+
+
         }
 
         items = null;
 
         items = a;
 
-        end = start+size;
+        start = 0;
+
+        end = size;
 
         a = null;
 
@@ -245,19 +251,10 @@ public class ArrayDeque<T> {
 
         }
 
-        if (start == 0) {
+        items[(start-1+items.length) % items.length] = x;
 
-            items[items.length-1] = x;
+        start = (start-1+items.length) % items.length;
 
-            start = items.length-1;
-
-        } else {
-
-            items[start-1] = x;
-
-            start = start - 1;
-
-        }
 
         size += 1;
 
@@ -267,23 +264,13 @@ public class ArrayDeque<T> {
 
         if (size == items.length) {
 
-            resize(size*2);
+            resize(size * 2);
 
         }
 
-        if (end < items.length) {
+        items[end] = x;
 
-            items[end] = x;
-
-            end = end + 1;
-
-        } else {
-
-            items[0] = x;
-
-            end = 1;
-
-        }
+        end = (end + 1) % items.length;
 
         size += 1;
 
@@ -324,7 +311,7 @@ public class ArrayDeque<T> {
 
             start = (start + 1) % items.length;
 
-            if ((float) size / (float) items.length <= 0.25 && size > 8) {
+            if ((float) size / (float) items.length <= 0.25 && items.length > 8) {
 
                 resize(items.length/2);
 
@@ -351,7 +338,7 @@ public class ArrayDeque<T> {
 
             end = (end -1 + items.length) % items.length;
 
-            if ((float) size / (float) items.length <= 0.25 && size > 8) {
+            if ((float) size / (float) items.length <= 0.25 && items.length > 8) {
 
                 resize(items.length/2);
 
@@ -426,12 +413,12 @@ public class ArrayDeque<T> {
 
 
 
-/*    public static void main(String[] args) {
+  /*  public static void main(String[] args) {
 
         Random rand = new Random();
 
-        ArrayDeque<Integer> ArrayDeque = new ArrayDeque<>();
-        ArrayDeque.addLast(0);
+        ArrayDeque<Integer> L = new ArrayDeque<>();
+ *//*       ArrayDeque.addLast(0);
         ArrayDeque.addFirst(1);
         ArrayDeque.addFirst(2);
         ArrayDeque.get(1);
@@ -454,10 +441,10 @@ public class ArrayDeque<T> {
         ArrayDeque.addLast(20);
         ArrayDeque.get(2);
         ArrayDeque.addFirst(22);
-        System.out.println(ArrayDeque.removeLast());
+        System.out.println(ArrayDeque.removeLast());*//*
 
 
-*//*        for (int i = 0; i < 17; i++) {
+        for (int i = 0; i < 256; i++) {
             int rd = rand.nextDouble() > 0.5 ? 1 : 0;
             if (rd == 1) {
                 L.addFirst(i);
@@ -466,33 +453,22 @@ public class ArrayDeque<T> {
             }
         }
 
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 190; i++) {
             System.out.println(L.removeFirst());
-            System.out.println(L.removeLast());
-        }*//*
+            //System.out.println(L.removeLast());
+        }
 
-
-*//*        System.out.println(L.removeFirst());
-        System.out.println(L.removeLast());*//*
-
-
-
-
-*//*        for (int i = 0; i < 2; i++) {
-            L.removeFirst();
-        }*//*
-
-        //L.removeLast();
-
-*//*
-        System.out.println((float) 10 / (float) 128);
-
-        System.out.println(L.get(0));
-*//*
+        for (int i = 0; i < 66; i++) {
+            System.out.println(L.removeFirst());
+            //System.out.println(L.removeLast());
+        }*/
 
 
 
-    }*/
+
+
+
+    }
 
 
 }
