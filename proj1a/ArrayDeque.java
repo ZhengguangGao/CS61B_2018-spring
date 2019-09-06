@@ -426,7 +426,7 @@ public class ArrayDeque<T> {
 
 
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
 
         Random rand = new Random();
 
@@ -457,7 +457,7 @@ public class ArrayDeque<T> {
         System.out.println(ArrayDeque.removeLast());
 
 
-/*        for (int i = 0; i < 17; i++) {
+*//*        for (int i = 0; i < 17; i++) {
             int rd = rand.nextDouble() > 0.5 ? 1 : 0;
             if (rd == 1) {
                 L.addFirst(i);
@@ -469,30 +469,30 @@ public class ArrayDeque<T> {
         for (int i = 0; i < 8; i++) {
             System.out.println(L.removeFirst());
             System.out.println(L.removeLast());
-        }*/
+        }*//*
 
 
-/*        System.out.println(L.removeFirst());
-        System.out.println(L.removeLast());*/
+*//*        System.out.println(L.removeFirst());
+        System.out.println(L.removeLast());*//*
 
 
 
 
-/*        for (int i = 0; i < 2; i++) {
+*//*        for (int i = 0; i < 2; i++) {
             L.removeFirst();
-        }*/
+        }*//*
 
         //L.removeLast();
 
-/*
+*//*
         System.out.println((float) 10 / (float) 128);
 
         System.out.println(L.get(0));
-*/
+*//*
 
 
 
-    }
+    }*/
 
 
 }
