@@ -2,12 +2,16 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-
 public class TestArrayDequeGold {
 
     StudentArrayDeque<Integer> std1 = new StudentArrayDeque<>();
 
     ArrayDequeSolution<Integer> std2 = new ArrayDequeSolution<>();
+
+    Integer item1;
+
+    Integer item2;
+
 
     @Test
     public void testArrayDequeGold() {
@@ -44,10 +48,10 @@ public class TestArrayDequeGold {
 
                 Integer item2 = std2.removeFirst();
 
-                assertEquals("removeFirst(): " + item1, item2, item1);
+                System.out.printf("removeFirst()\n");
 
+                assertEquals(item2, item1);
 
-                System.out.printf("removeFirst(): %d\n",item1);
 
             } else {
 
@@ -55,9 +59,9 @@ public class TestArrayDequeGold {
 
                 Integer item2 = std2.removeLast();
 
-                assertEquals("removeLast(): " + item1, item2, item1);
+                System.out.printf("removeLast()\n");
 
-                System.out.printf("removeLast(): %d\n",item1);
+                assertEquals(item2, item1);
 
             }
 
@@ -66,9 +70,9 @@ public class TestArrayDequeGold {
 
     }
 
-/*    public static void main(String[] args) {
+    public static void main(String[] args) {
         jh61b.junit.TestRunner.runTests(TestArrayDequeGold.class);
-    }*/
+    }
 
 
 
