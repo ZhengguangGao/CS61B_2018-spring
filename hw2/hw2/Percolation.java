@@ -4,14 +4,14 @@ import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
 
-    boolean[][] grid;
-    WeightedQuickUnionUF set_all;
-    WeightedQuickUnionUF set_all_except_bottom;
-    int size;
-    int top;
-    int bottow;
-    int count;
-    int[][] strides = new int[][] {{0,1},{0,-1},{1,0},{-1,0}};
+    private boolean[][] grid;
+    private WeightedQuickUnionUF set_all;
+    private WeightedQuickUnionUF set_all_except_bottom;
+    private int size;
+    private int top;
+    private int bottow;
+    private int count;
+    private int[][] strides = new int[][] {{0,1},{0,-1},{1,0},{-1,0}};
 
 
 
@@ -113,7 +113,7 @@ public class Percolation {
 
     // use for unit testing (not required)
 
-    public void initial_valid(int x, int y) {
+    private void initial_valid(int x, int y) {
 
         if (x < 0 || x >= size || y < 0 || y >= size) {
             throw new IndexOutOfBoundsException();
@@ -121,7 +121,7 @@ public class Percolation {
     }
 
 
-    public int xyTo1D(int x,int y) {
+    private int xyTo1D(int x,int y) {
 
         return x*size+y+1;
     }
